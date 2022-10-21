@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Carousel View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CarouselViewController" customModule="CarouselSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qlf-zv-be8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="527"/>
+                                <connections>
+                                    <segue destination="Sgm-2L-5qf" kind="embed" id="xdf-B3-vOi"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVs-gG-awe">
+                                <rect key="frame" x="30" y="552" width="315" height="90"/>
+                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="jF2-jD-J8w"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" systemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jEi-y8-Ll4"/>
+                                    <action selector="onButtonNextTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EP2-La-sqO"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Egg-td-Gxa" customClass="BottomTabCollectionView" customModule="CarouselSample" customModuleProvider="target">
+                                <rect key="frame" x="30" y="552" width="315" height="90"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EVs-gG-awe" firstAttribute="top" secondItem="Qlf-zv-be8" secondAttribute="bottom" constant="25" id="00O-ep-Vg3"/>
+                            <constraint firstItem="Egg-td-Gxa" firstAttribute="bottom" secondItem="EVs-gG-awe" secondAttribute="bottom" id="8te-FK-kUu"/>
+                            <constraint firstItem="EVs-gG-awe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Ee5-rN-Sdq"/>
+                            <constraint firstItem="Egg-td-Gxa" firstAttribute="trailing" secondItem="EVs-gG-awe" secondAttribute="trailing" id="H5W-CR-29x"/>
+                            <constraint firstItem="Qlf-zv-be8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NKc-xr-jyK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qlf-zv-be8" secondAttribute="trailing" id="QIG-iH-yAJ"/>
+                            <constraint firstItem="EVs-gG-awe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W7x-2D-qKw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EVs-gG-awe" secondAttribute="bottom" constant="25" id="YgB-1U-FjJ"/>
+                            <constraint firstItem="Egg-td-Gxa" firstAttribute="leading" secondItem="EVs-gG-awe" secondAttribute="leading" id="nP0-3E-NUL"/>
+                            <constraint firstItem="Egg-td-Gxa" firstAttribute="top" secondItem="EVs-gG-awe" secondAttribute="top" id="ph0-aN-dUy"/>
+                            <constraint firstItem="Qlf-zv-be8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yw6-8i-Z7t"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomTabCollectionView" destination="Egg-td-Gxa" id="HaG-vD-Skt"/>
+                        <outlet property="btnNext" destination="EVs-gG-awe" id="ehT-h3-C9I"/>
+                        <outlet property="vwContainer" destination="Qlf-zv-be8" id="Kbd-jZ-8tR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--Carousel Page View Controller-->
+        <scene sceneID="DRF-hy-fHn">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Sgm-2L-5qf" customClass="CarouselPageViewController" customModule="CarouselSample" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LXn-NA-44j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="129" y="913"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="NUf-J1-8hM">
+            <objects>
+                <viewController id="yvy-6L-nSu" customClass="ViewController" customModule="CarouselSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M7S-gN-uS6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="va7-sK-VHh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X17-og-520" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-343" y="1509"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
